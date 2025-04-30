@@ -63,10 +63,10 @@ WSGI_APPLICATION = 'cryptobackend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
+        'NAME': 'django',
+        'USER': 'root',
+        'PASSWORD': '9733',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
