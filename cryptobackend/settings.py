@@ -7,7 +7,7 @@ SECRET_KEY = 'your-secret-key-here'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cryptoverse-g4q6.onrender.com', 'localhost', '127.0.0.1']
 
 
 INSTALLED_APPS = [
