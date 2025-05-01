@@ -1,15 +1,15 @@
 from pathlib import Path
 from datetime import timedelta
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(_file_).resolve().parent.parent
 
-SECRET_KEY = 'your-secret-key-here'  
+SECRET_KEY = 'your-secret-key-here'  # Replace with your own key
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['cryptoverse-g4q6.onrender.com', 'localhost', '127.0.0.1','chipper-medovik-c1e41c.netlify.app']
+ALLOWED_HOSTS = ["rainbow-bonbon-c6ef4f.netlify.app","chipper-medovik-c1e41c.netlify.app"]
 
-
+# Installed apps
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -18,17 +18,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    
+    # Third-party
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
 
-    
+    # Your apps
     'accounts',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',  
+    'corsheaders.middleware.CorsMiddleware',  # CORS should be high in the list
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,19 +59,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cryptobackend.wsgi.application'
 
 
-
+# MySQL DB setup
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
-        'USER': 'admin',
-        'PASSWORD': 'kathan1234',
-        'HOST': 'database-1.cpgagy8uoegh.ap-south-1.rds.amazonaws.com',
-        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': 'darshan',
+        'HOST': 'localhost',
+        'PORT': '3309',
     }
 }
 
 
+# Password validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -81,40 +82,39 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Timezone and language
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
+# Static files
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# REST Framework config
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
 
-
+# JWT config
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
-
+# Email Backend (for testing)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'noreply@cryptoverse.local'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = True  # ✅ Allow all origins (for development only)
+
+# CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    "https://rainbow-bonbon-c6ef4f.netlify.app",
 ]
-
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
-}
