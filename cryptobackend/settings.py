@@ -63,7 +63,7 @@ WSGI_APPLICATION = 'cryptobackend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
+        'NAME': 'django',
         'USER': 'admin',
         'PASSWORD': 'kathan1234',
         'HOST': 'database-1.cpgagy8uoegh.ap-south-1.rds.amazonaws.com',
